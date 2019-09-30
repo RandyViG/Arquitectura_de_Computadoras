@@ -1,6 +1,6 @@
 # Arquitectura de Computadoras
 ## Escuela Superior de Cómputo|Escom 
-*Profesora: Nayely Vega García*
+*Profesora: Nayeli Vega García*
 
 **Practicas:**
 1. Sumador-restador de N bits con acarreo en cascada.
