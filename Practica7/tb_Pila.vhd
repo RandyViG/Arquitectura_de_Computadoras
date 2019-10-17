@@ -64,175 +64,60 @@ BEGIN
     dw<='0';
     up<='0';
     wpc<='0';
-    wait for 2 ns;
+    wait for 10 ns;
     
     pcin<=x"0000";
     clr<='0';
-    dw<='0';
-    up<='0';
-    wpc<='0';
-    wait for 2 ns;
-        
-    pcin<=x"0000";
-    clr<='0';
-    dw<='0';
-    up<='0';
-    wpc<='0';
-    wait for 2 ns;
-        
-    pcin<=x"0000";
-    clr<='0';
-    dw<='0';
-    up<='0';
-    wpc<='0';
-    wait for 2 ns;
+    wait for 30 ns;
         
     pcin<=x"0510";
-    clr<='0';
-    dw<='0';
     up<='1';
     wpc<='1';
-    wait for 2 ns;
+    wait for 10 ns;
         
     pcin<=x"0000";
-    clr<='0';
-    dw<='0';
     up<='0';
     wpc<='0';
-    wait for 2 ns;
-        
-    pcin<=x"0000";
-    clr<='0';
-    dw<='0';
-    up<='0';
-    wpc<='0';
-    wait for 2 ns;
-        
-    pcin<=x"0000";
-    clr<='0';
-    dw<='0';
-    up<='0';
-    wpc<='0';
-    wait for 2 ns;
+    wait for 30 ns;
        
     pcin<=x"0020";
-    clr<='0';
-    dw<='0';
-    up<='0';
     wpc<='1';
-    wait for 2 ns;
+    wait for 10 ns;
         
     pcin<=x"0100";
-    clr<='0';
-    dw<='0';
     up<='1';
     wpc<='1';
-    wait for 2 ns;
+    wait for 10 ns;
         
     pcin<=x"0000";
-    clr<='0';
-    dw<='0';
     up<='0';
     wpc<='0';
-    wait for 2 ns;
+    wait for 30 ns;
         
     pcin<=x"0000";
-    clr<='0';
-    dw<='0';
-    up<='0';
-    wpc<='0';
-    wait for 2 ns;
-        
-    pcin<=x"0000";
-    clr<='0';
-    dw<='0';
-    up<='0';
-    wpc<='0';
-    wait for 2 ns;
-        
-    pcin<=x"0000";
-    clr<='0';
     dw<='1';
-    up<='0';
-    wpc<='0';
-    wait for 2 ns;
+    wait for 10 ns;
         
-    pcin<=x"0000";
-    clr<='0';
     dw<='0';
-    up<='0';
-    wpc<='0';
-    wait for 2 ns;
+    wait for 20 ns;
         
-    pcin<=x"0000";
-    clr<='0';
-    dw<='0';
-    up<='0';
-    wpc<='0';
-    wait for 2 ns;
-        
-    pcin<=x"0000";
-    clr<='0';
     dw<='1';
-    up<='0';
-    wpc<='0';
-    wait for 2 ns;
+    wait for 10 ns;
         
-    pcin<=x"0000";
-    clr<='0';
     dw<='0';
-    up<='0';
-    wpc<='0';
-    wait for 2 ns;
+    wait for 10 ns;
         
-    pcin<=x"0000";
-    clr<='0';
     dw<='1';
-    up<='0';
-    wpc<='0';
-    wait for 2 ns;
+    wait for 10 ns;
         
-    pcin<=x"0000";
-    clr<='0';
     dw<='0';
-    up<='0';
-    wpc<='0';
-    wait for 2 ns;
+    wait for 20 ns;
+        
+    dw<='1';
+    wait for 10 ns;
        
-    pcin<=x"0000";
-    clr<='0';
     dw<='0';
-    up<='0';
-    wpc<='0';
-    wait for 2 ns;
-        
-    pcin<=x"0000";
-    clr<='0';
-    dw<='1';
-    up<='0';
-    wpc<='0';
-    wait for 2 ns;
-       
-    pcin<=x"0000";
-    clr<='0';
-    dw<='0';
-    up<='0';
-    wpc<='0';
-    wait for 2 ns;
-        
-    pcin<=x"0000";
-    clr<='0';
-    dw<='0';
-    up<='0';
-    wpc<='0';
-    wait for 2 ns;
-        
-    pcin<=x"0000";
-    clr<='1';
-    dw<='0';
-    up<='0';
-    wpc<='0';
-    wait for 2 ns;
+    wait for 30 ns;
     
     wait;
    end process;
