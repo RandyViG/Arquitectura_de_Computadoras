@@ -85,13 +85,13 @@ constant R15 : std_logic_vector (3 downto 0) := "1111";
 
 type arreglo is array ( 0 to (2**bus_datos)-1 ) of std_logic_vector(24 downto 0);
 constant aux : arreglo := (
-	li & R0 & x"0001",
-	li & R1 & x"0007",
-	call & su & x"0005",
-	swi & R1 & x"0005",
-	b & su & x"0002",
-	tipo_r & R1 & R1 & R0 & su & add,
-	ret & su & su & su & su & su,
+    li & R0 & x"0001",
+    li & R1 & x"0007",
+    call & su & x"0005",
+    swi & R1 & x"0005",
+    b & su & x"0002",
+    tipo_r & R1 & R1 & R0 & su & add,
+    ret & su & su & su & su & su,
 others => (others => '0')
 );
 begin
