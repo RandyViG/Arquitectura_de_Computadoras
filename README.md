@@ -9,3 +9,5 @@
 4. Archivo de Registros
 5. Memoria de Datos
 6. Memoria de Programa
+7. Pila Hardware
+8. Fetch de instrucciones
