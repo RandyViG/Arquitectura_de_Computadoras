@@ -7,6 +7,7 @@ entity Fetch is
         pcin : in  STD_LOGIC_VECTOR (15 downto 0);
         wpc,up,dw,clr,clk : in  STD_LOGIC;
         sp : out STD_LOGIC_VECTOR (2 downto 0);
+        pcout : out  STD_LOGIC_VECTOR (15 downto 0);
         dataout : out  STD_LOGIC_VECTOR (24 downto 0));
 end Fetch;
 
@@ -47,6 +48,7 @@ begin
         dir => aux_pcout,
         dout => dataout
     );
+    pcout<=aux_pcout;
 
 end Behavioral;
 
