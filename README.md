@@ -11,3 +11,4 @@
 6. Memoria de Programa
 7. Pila Hardware
 8. Fetch de instrucciones
+9. Carta ASM (Circuito contador de 1's)
