@@ -96,6 +96,40 @@ constant aux : arreglo := (
     BNEI & R3 & R2 & x"FFB",	--BNEI R2 R3 5 1011
     NOP & SU & SU & SU & SU & SU,--NOP
     b & su & x"FFFF",
+    
+------------------------------------------------------------------------
+--                  Programa Proyecto 2 Burbuja
+------------------------------------------------------------------------	 
+--	LI & R0 & x"0017",  --LI R0=23			0
+--	SWI & R0 & x"000a", --SWI MEM[10]=R0	1
+--	LI & R0 & x"0082",  --LI R0=130			2
+--	SWI & R0 & x"000b", --SWI MEM[11]=R0	3
+--	LI & R0 & x"0046",  --LI R0=70			4
+--	SWI & R0 & x"000c", --SWI MEM[12]=R0	5
+--	LI & R0 & x"0104",  --LI R0=260			6
+--	SWI & R0 & x"000d", --SWI MEM[13]=R0	7
+--	LI & R0 & x"002D",  --LI R0=45			8
+--	SWI & R0 & x"000e", --SWI MEM[14]=R0	9
+--	LI & R0 & x"00B4",  --LI R0=180			10
+--	SWI & R0 & x"000f", --SWI MEM[15]=R0	11
+--	LI & R0 & x"0000",  --LI R0=0				12
+--	LI & R6 & x"0005",  --LI R6=5				13
+--	LI & R2 & x"0000",  --LI R2=0				14
+--	tipo_r & R5 & R6 & R0 & su & sub, --SUB R5= R6-R0 	15
+--	LW & R3 & R2 & x"00a", --LW R3=MEM[10+R2]				16
+--	ADDI & R2 & R2 & x"001", --R2=R2+1						17
+--	LW & R4 & R2 & x"00a", --LW R4=MEM[10+R2]				18
+--	BLETI & R4 & R3 & x"005", --R3 <= R4					19
+--	SW & R3 & R2 & x"00a", -- mem[R2+10]=R3				20
+--	SUBI & R2 & R2 & x"001", --R2=R2-1						21	
+--	SW & R4 & R2 & x"00a", -- mem[R2+10]=R4				22	
+--	ADDI & R2 & R2 & x"001", --R2=R2+1						23	
+--	BNEI & R5 & R2 & x"FF8", --R2 != R5						24	
+--	ADDI & R0 & R0 & x"001", --R0=R0+1						25	
+--	BNEI & R6 & R0 & x"FF4", --R0 != R6						26
+--	NOP & SU & SU & SU & SU & SU,--NOP						27
+
+
     others => (others => '0')
 );
 begin
