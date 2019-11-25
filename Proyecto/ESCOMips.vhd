@@ -66,8 +66,6 @@ begin
         end if;
     end process;
     
-    clk<=CLK_Nexys;
-    
     Frecuencia: DivisorFrecuencia Port Map(
         clk => CLK_Nexys,
         clr => Reset,
