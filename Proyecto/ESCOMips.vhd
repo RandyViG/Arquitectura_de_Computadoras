@@ -10,7 +10,7 @@ use WORK.ESCO_MIPS.ALL;
 --                 Entity para el anlisis del ESCOMips
 ---------------------------------------------------------------------------------
 --entity ESCOMips is
---    Port (  CLK_Nexys,Reset : in  STD_LOGIC;
+--    Port (  clk,Reset : in  STD_LOGIC;
 --            pc_out,reg1,reg2,alu_out,data_out: out STD_LOGIC_VECTOR(15 DOWNTO 0);
 --            banderas:out STD_LOGIC_VECTOR(3 downto 0);
 --            micro: out STD_LOGIC_VECTOR(19 downto 0);
@@ -37,22 +37,42 @@ signal  auxPCin,auxPCout,auxReadData1,auxReadData2,auxSlit_Signo,
         auxS,auxSOP1,auxSOP2,auxSEXT: std_logic_vector(15 downto 0);
 signal  auxSigno: std_logic_vector(11 downto 0);
 signal  auxREG2,auxFlags: std_logic_vector(3 downto 0);
-signal  clr,clk: std_logic;
+signal  clr: std_logic;
+---------------------------------------------------------------------
+--                  CLK para bajar a tarjeta
+---------------------------------------------------------------------
+signal clk: std_logic;
 
 begin
-
+    
+---------------------------------------------------------------------
+--                  Process para simulación
+--          **Comentar el divisor de Frecuencia
+---------------------------------------------------------------------
+    --process(clk)
+    --begin
+    --    if( falling_edge(clk) ) then
+    --        clr <= Reset;
+    --    end if;
+    --end process;
+    
+---------------------------------------------------------------------
+--	         Process para para bajar a tarjeta
+---------------------------------------------------------------------
     process(CLK_Nexys)
     begin
         if( falling_edge(CLK_Nexys) ) then
             clr <= Reset;
         end if;
     end process;
-	 
-	 Frecuencia: DivisorFrecuencia Port Map(
-		  clk => CLK_Nexys,
-		  clr => Reset,
-		  clk_out => clk
-	 );
+    
+    clk<=CLK_Nexys;
+    
+    Frecuencia: DivisorFrecuencia Port Map(
+        clk => CLK_Nexys,
+        clr => Reset,
+        clk_out => clk
+    );
 
     Stack: pila Port Map(
         clk => clk,
