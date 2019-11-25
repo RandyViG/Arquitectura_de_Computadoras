@@ -54,6 +54,7 @@ begin
                                                         sig<=e0;
                                                     else
                                                         sdopc<='0';
+                                                        sm<='1';
                                                         sig<=e0;
                                                     end if;
                                                 end if;
@@ -70,6 +71,7 @@ begin
                                                     sig<=e0;
                                                 else
                                                     sdopc<='0';
+                                                    sm<='1';
                                                     sig<=e0;
                                                 end if;
                                             end if;
@@ -86,6 +88,7 @@ begin
                                                 sig<=e0;
                                             else
                                                 sdopc<='0';
+                                                sm<='1';
                                                 sig<=e0;
                                             end if;
                                         end if;
@@ -102,6 +105,7 @@ begin
                                             sig<=e0;
                                         else
                                             sdopc<='0';
+                                            sm<='1';
                                             sig<=e0;
                                         end if;
                                     end if;
@@ -118,6 +122,7 @@ begin
                                         sig<=e0;
                                     else
                                         sdopc<='0';
+                                        sm<='1';
                                         sig<=e0;
                                     end if;
                                 end if;
@@ -134,6 +139,7 @@ begin
                                     sig<=e0;
                                 else
                                     sdopc<='0';
+                                    sm<='1';
                                     sig<=e0;
                                 end if;
                             end if;
