@@ -37,7 +37,7 @@ package ESCO_MIPS is
     
     component MemoriaPrograma is
         Port ( 
-            dir : in  STD_LOGIC_VECTOR (15 downto 0);
+            dir : in  STD_LOGIC_VECTOR (8 downto 0);
             dout : out  STD_LOGIC_VECTOR (24 downto 0)
         );
     end component;

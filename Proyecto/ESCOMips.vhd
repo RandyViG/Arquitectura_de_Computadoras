@@ -83,7 +83,7 @@ begin
     );
 
     MemProg: MemoriaPrograma Port Map(
-        dir => auxPCout,
+        dir => auxPCout (8 downto 0),
         dout => auxInstruccion
     );
 
