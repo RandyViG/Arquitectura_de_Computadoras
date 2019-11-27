@@ -84,51 +84,63 @@ constant aux : arreglo := (
 ------------------------------------------------------------------------
 --                  Programa Proyecto 1 Fibonacci
 ------------------------------------------------------------------------
-    LI & R0 & x"0000",	--LI R0 #0
-    LI & R1 & x"0001",	--L1 R1 #1
-    LI & R2 & x"0000",	--LI R2 #0
-    LI & R3 & x"000C",	--LI R3 #12
-    tipo_r & R4 & R0 & R1 & SU & add,	--tipo_R R4 R0 R1 SU add
-    SWI & R4 & x"0072",	--swi R4 #72 48
-    ADDI & R0 & R1 & x"000",	--ADDI R0 R1 #0
-    ADDI & R1 & R4 & x"000",	--ADDI R1 R4 #0
-    ADDI & R2 & R2 & x"001",	--ADDI R2 R2 #1
-    BNEI & R3 & R2 & x"FFB",	--BNEI R2 R3 5 1011
-    NOP & SU & SU & SU & SU & SU,--NOP
-    b & su & x"FFFF",
+    --LI & R0 & x"0000",--LI R0 #0
+    --LI & R1 & x"0001",--L1 R1 #1
+    --LI & R2 & x"0000",--LI R2 #0
+    --LI & R3 & x"000C",--LI R3 #12
+    --tipo_r & R4 & R0 & R1 & SU & add,   --tipo_R R4 R0 R1 SU add
+    --SWI & R4 & x"0072",--swi R4 #72 48
+    --ADDI & R0 & R1 & x"000",--ADDI R0 R1 #0
+    --ADDI & R1 & R4 & x"000",--ADDI R1 R4 #0
+    --ADDI & R2 & R2 & x"001",--ADDI R2 R2 #1
+    --BNEI & R3 & R2 & x"FFB",--BNEI R2 R3 5 1011
+    --NOP & SU & SU & SU & SU & SU,--NOP
+    --b & su & x"FFFF",
     
 ------------------------------------------------------------------------
 --                  Programa Proyecto 2 Burbuja
-------------------------------------------------------------------------	 
---	LI & R0 & x"0017",  --LI R0=23			0
---	SWI & R0 & x"000a", --SWI MEM[10]=R0	1
---	LI & R0 & x"0082",  --LI R0=130			2
---	SWI & R0 & x"000b", --SWI MEM[11]=R0	3
---	LI & R0 & x"0046",  --LI R0=70			4
---	SWI & R0 & x"000c", --SWI MEM[12]=R0	5
---	LI & R0 & x"0104",  --LI R0=260			6
---	SWI & R0 & x"000d", --SWI MEM[13]=R0	7
---	LI & R0 & x"002D",  --LI R0=45			8
---	SWI & R0 & x"000e", --SWI MEM[14]=R0	9
---	LI & R0 & x"00B4",  --LI R0=180			10
---	SWI & R0 & x"000f", --SWI MEM[15]=R0	11
---	LI & R0 & x"0000",  --LI R0=0				12
---	LI & R6 & x"0005",  --LI R6=5				13
---	LI & R2 & x"0000",  --LI R2=0				14
---	tipo_r & R5 & R6 & R0 & su & sub, --SUB R5= R6-R0 	15
---	LW & R3 & R2 & x"00a", --LW R3=MEM[10+R2]				16
---	ADDI & R2 & R2 & x"001", --R2=R2+1						17
---	LW & R4 & R2 & x"00a", --LW R4=MEM[10+R2]				18
---	BLETI & R4 & R3 & x"005", --R3 <= R4					19
---	SW & R3 & R2 & x"00a", -- mem[R2+10]=R3				20
---	SUBI & R2 & R2 & x"001", --R2=R2-1						21	
---	SW & R4 & R2 & x"00a", -- mem[R2+10]=R4				22	
---	ADDI & R2 & R2 & x"001", --R2=R2+1						23	
---	BNEI & R5 & R2 & x"FF8", --R2 != R5						24	
---	ADDI & R0 & R0 & x"001", --R0=R0+1						25	
---	BNEI & R6 & R0 & x"FF4", --R0 != R6						26
---	NOP & SU & SU & SU & SU & SU,--NOP						27
-
+------------------------------------------------------------------------
+    LI & R0 & x"0064", --                               0
+    LI & R1 & x"0000", -- Contador                      1
+    LI & R2 & x"0009", -- N	#40 x28                     2
+    CALL & SU & x"0007",--Llenar                        3
+    CALL & SU & x"000C",--Ordenar                       4
+    CALL & SU & x"001B",--Mostrar                       5
+    B & SU & x"0005",--                                 6
+--------------------------------------------------------------------------
+--                      Subrutina LLENAR
+--------------------------------------------------------------------------
+    SW & R0 & R1 & x"00A", --                           7
+    ADDI & R1 & R1 & x"001",--                          8
+    SUBI & R0 & R0 & x"005",--                          9
+    BLETI & R2 & R1 & x"FFD",--                         10
+    RET & SU & SU & SU & SU & SU,--                     11
+----------------------------------------------------------------------
+--                      Subrutina ORDENAR
+--------------------------------------------------------------------------	
+    LI & R0 & x"0000",  --LI R0=0                       12
+    LI & R1 & x"0000",  --LI R1=0                       13
+    tipo_r & R5 & R2 & R0 & su & sub, --SUB R5= R6-R0   14
+    LW & R3 & R1 & x"00A", --LW R3=MEM[10+R1]           15
+    ADDI & R1 & R1 & x"001", --R1=R1+1                  16
+    LW & R4 & R1 & x"00a", --LW R4=MEM[10+R1]           17
+    BLETI & R4 & R3 & x"005", --R3 <= R4                18
+    SW & R3 & R1 & x"00a", -- mem[R1+10]=R3             19
+    SUBI & R1 & R1 & x"001", --R1=R1-1                  20
+    SW & R4 & R1 & x"00a", -- mem[R1+10]=R4             21
+    ADDI & R1 & R1 & x"001", --R1=R1+1                  22
+    BNEI & R5 & R1 & x"FF8", --R1 != R5                 23
+    ADDI & R0 & R0 & x"001", --R0=R0+1                  24
+    BNEI & R2 & R0 & x"FF4", --R0 != R2                 25
+    RET & SU & SU & SU & SU & SU,-- RET                 26
+--------------------------------------------------------------------------
+--                       Subrutina Mostrar
+--------------------------------------------------------------------------
+    LI & R1 & x"0000",  --LI R1=0                       27
+    LW & R10 & R1 & x"00A",--	LW R10=MEM[R1+10]       28
+    ADDI & R1 & R1 & x"001", --R1=R1+1                  29
+    BLETI & R2 & R1 & x"FFE",--	R1<=R2                  30
+    RET & SU & SU & SU & SU & SU,--RET                  31
 
     others => (others => '0')
 );
