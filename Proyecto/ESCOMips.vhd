@@ -11,7 +11,7 @@ use WORK.ESCO_MIPS.ALL;
 ---------------------------------------------------------------------------------
 --entity ESCOMips is
 --    Port (  clk,Reset : in  STD_LOGIC;
---            pc_out,reg1,reg2,alu_out,data_out: out STD_LOGIC_VECTOR(15 DOWNTO 0);
+--            pc_out,reg1,reg2,alu_out,data_in,data_out: out STD_LOGIC_VECTOR(15 DOWNTO 0);
 --            banderas:out STD_LOGIC_VECTOR(3 downto 0);
 --            micro: out STD_LOGIC_VECTOR(19 downto 0);
 --            instr: out STD_LOGIC_VECTOR(24 downto 0)
@@ -203,7 +203,8 @@ begin
 --    reg2 <= auxReadData2;
 --    alu_out <= auxS;
 --    banderas <= auxFlags;
---    data_out <= auxReadData2;
+--    data_in <= auxReadData2;
+--    data_out <= auxMem_DataOut;
 --    micro <= microinstruccion;
 --    instr<= auxInstruccion;
     
